@@ -21,7 +21,7 @@ app.Urls.Add($"http://*:{port}");
 
 
 // ⚠️ OPCIONAL (puedes dejarlo o quitarlo)
-app.UseHttpsRedirection();
+
 
 app.UseAuthorization();
 
