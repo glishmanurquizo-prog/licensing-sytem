@@ -9,7 +9,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // 📦 Servicios
 builder.Services.AddControllers();
-builder.Services.AddOpenApi();
+
 
 var app = builder.Build();
 
@@ -18,10 +18,7 @@ var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
 app.Urls.Add($"http://*:{port}");
 
 // 📌 Pipeline
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+
 
 // ⚠️ OPCIONAL (puedes dejarlo o quitarlo)
 app.UseHttpsRedirection();
