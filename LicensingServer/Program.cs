@@ -3,22 +3,27 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// 🔌 Configuración de PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-// Add services to the container.
 
+// 📦 Servicios
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// 🌐 🔥 CONFIGURACIÓN CLAVE PARA RAILWAY
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://*:{port}");
+
+// 📌 Pipeline
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
+// ⚠️ OPCIONAL (puedes dejarlo o quitarlo)
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
