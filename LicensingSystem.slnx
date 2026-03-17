@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/Elementos de la solución/" />
+  <Project Path="LicensingClient/LicensingClient.csproj" Id="7091df47-528d-4ac0-9bd8-691435673c0b" />
+  <Project Path="LicensingServer/LicensingServer.csproj" Id="71443321-89f3-4f22-b544-19cbe17ed4c6" />
+</Solution>
